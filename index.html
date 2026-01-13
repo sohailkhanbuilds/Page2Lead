@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Page2Lead – Landing Pages That Get Leads</title>
+
+  <meta name="description" content="Page2Lead designs high-converting landing pages for small businesses that want real enquiries, not just traffic.">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+    }
+
+    body {
+      color: #111;
+      background: #ffffff;
+      line-height: 1.6;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: auto;
+      padding: 60px 20px;
+    }
+
+    /* HEADER */
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 40px;
+    }
+
+    .logo {
+      font-weight: 700;
+      font-size: 20px;
+    }
+
+    .cta-btn {
+      background: #4CAF50;
+      color: #fff;
+      padding: 12px 22px;
+      border-radius: 30px;
+      font-weight: 600;
+      display: inline-block;
+      cursor: pointer;
+    }
+
+    /* HERO */
+    .hero {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 50px;
+      align-items: center;
+      padding: 80px 40px;
+      background: linear-gradient(to right, #f7fff9, #ffffff);
+    }
+
+    .hero h1 {
+      font-size: 44px;
+      line-height: 1.2;
+      margin-bottom: 20px;
+    }
+
+    .hero p {
+      font-size: 18px;
+      color: #444;
+      margin-bottom: 30px;
+    }
+
+    .hero-mockup {
+      background: #f2f2f2;
+      border-radius: 14px;
+      padding: 20px;
+    }
+
+    /* SECTIONS */
+    .section-title {
+      font-size: 32px;
+      margin-bottom: 20px;
+    }
+
+    .section-desc {
+      max-width: 700px;
+      color: #555;
+      margin-bottom: 40px;
+    }
+
+    .two-col {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+    }
+
+    ul {
+      list-style: none;
+    }
+
+    ul li {
+      margin-bottom: 14px;
+      padding-left: 24px;
+      position: relative;
+    }
+
+    ul li::before {
+      content: "✓";
+      position: absolute;
+      left: 0;
+      color: #4CAF50;
+      font-weight: bold;
+    }
+
+    /* PROCESS */
+    .steps {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 25px;
+    }
+
+    .step {
+      background: #f8f8f8;
+      padding: 25px;
+      border-radius: 12px;
+    }
+
+    .step h3 {
+      margin-bottom: 10px;
+      font-size: 18px;
+    }
+
+    /* PRICING */
+    .pricing-box {
+      max-width: 420px;
+      background: #f7fff9;
+      border: 2px solid #4CAF50;
+      padding: 40px;
+      border-radius: 16px;
+      text-align: center;
+    }
+
+    .price {
+      font-size: 36px;
+      font-weight: 700;
+      margin: 20px 0;
+    }
+
+    /* FINAL CTA */
+    .final-cta {
+      background: #111;
+      color: #fff;
+      text-align: center;
+      padding: 80px 20px;
+    }
+
+    .final-cta h2 {
+      font-size: 34px;
+      margin-bottom: 20px;
+    }
+
+    .final-cta p {
+      color: #ccc;
+      margin-bottom: 30px;
+    }
+
+    /* WHATSAPP FLOAT */
+    .whatsapp-float {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background: #25D366;
+      color: #fff;
+      padding: 14px 20px;
+      border-radius: 30px;
+      font-weight: 600;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+      z-index: 999;
+      display: none;
+    }
+
+    footer {
+      text-align: center;
+      padding: 30px;
+      font-size: 14px;
+      color: #777;
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 900px) {
+      .hero {
+        grid-template-columns: 1fr;
+        text-align: center;
+      }
+
+      header {
+        padding: 20px;
+      }
+
+      .two-col {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <div class="logo">Page2Lead</div>
+  <a href="#contact" class="cta-btn">Free Audit</a>
+</header>
+
+<section class="hero">
+  <div>
+    <h1>Landing Pages for Small Businesses That Want More Leads</h1>
+    <p>
+      I design high-converting landing pages that turn visitors into real enquiries —
+      not just traffic or pretty designs.
+    </p>
+    <a href="#contact" class="cta-btn">Get a Free 10-Minute Audit</a>
+  </div>
+
+  <div class="hero-mockup">
+    <!-- Replace this image with your own landing page screenshot -->
+    <img src="preview.jpg" alt="Landing page preview">
+  </div>
+</section>
+
+<section class="container">
+  <h2 class="section-title">Who This Is For</h2>
+  <div class="two-col">
+    <ul>
+      <li>Small businesses running ads but getting no enquiries</li>
+      <li>Freelancers & coaches who need one focused page</li>
+      <li>Anyone tired of websites that don’t convert</li>
+    </ul>
+    <ul>
+      <li>You want leads, not “just a website”</li>
+      <li>You care about ROI, not fancy animations</li>
+      <li>You want fast, clean, SEO-ready pages</li>
+    </ul>
+  </div>
+</section>
+
+<section class="container">
+  <h2 class="section-title">Why Most Websites Fail</h2>
+  <p class="section-desc">
+    Most websites confuse visitors, load slowly, and never clearly ask for action.
+    Good design without conversion is useless.
+  </p>
+  <ul>
+    <li>No clear headline or offer</li>
+    <li>Too many pages, no focus</li>
+    <li>Looks good but doesn’t sell</li>
+  </ul>
+</section>
+
+<section class="container">
+  <h2 class="section-title">How Page2Lead Works</h2>
+  <div class="steps">
+    <div class="step">
+      <h3>1. Intent Research</h3>
+      <p>I understand your audience and what makes them click.</p>
+    </div>
+    <div class="step">
+      <h3>2. Conversion Copy</h3>
+      <p>Clear message, clear offer, clear action.</p>
+    </div>
+    <div class="step">
+      <h3>3. Fast HTML Design</h3>
+      <p>No WordPress bloat. Clean, lightweight code.</p>
+    </div>
+    <div class="step">
+      <h3>4. SEO-Ready Structure</h3>
+      <p>Built so Google understands it and users trust it.</p>
+    </div>
+  </div>
+</section>
+
+<section class="container">
+  <h2 class="section-title">Pricing</h2>
+  <div class="pricing-box">
+    <h3>Landing Page Design</h3>
+    <div class="price">$39+</div>
+    <p>One focused landing page built to convert visitors into leads.</p>
+    <a href="#contact" class="cta-btn">Get Started</a>
+  </div>
+</section>
+
+<section id="contact" class="final-cta">
+  <h2>Get a Free Landing Page Audit</h2>
+  <p>
+    Send your website or idea and I’ll tell you exactly what’s stopping it from converting.
+    No sales pitch. Just honest feedback.
+  </p>
+  <a href="https://wa.me/918290948499" class="cta-btn">WhatsApp Me</a>
+</section>
+
+<a href="https://wa.me/918290948499" class="whatsapp-float">WhatsApp</a>
+
+<footer>
+  © Page2Lead — High-Converting Landing Pages
+</footer>
+
+<!-- ================= JS ================= -->
+<script>
+  /* Smooth scroll */
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+      e.preventDefault();
+      document.querySelector(this.getAttribute('href'))
+        .scrollIntoView({ behavior: 'smooth' });
+    });
+  });
+
+  /* Sticky WhatsApp button */
+  const waBtn = document.querySelector('.whatsapp-float');
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 400) {
+      waBtn.style.display = 'block';
+    } else {
+      waBtn.style.display = 'none';
+    }
+  });
+
+  /* CTA click tracking (console for now) */
+  document.querySelectorAll('.cta-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      console.log('CTA clicked:', btn.innerText);
+    });
+  });
+</script>
+
+</body>
+</html>
