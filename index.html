@@ -2,28 +2,87 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Page2Lead – Landing Pages That Get Leads</title>
+  <title>Page2Lead – High-Converting Landing Pages That Get Real Leads</title>
 
-  <meta name="description" content="Page2Lead designs high-converting landing pages for small businesses that want real enquiries, not just traffic.">
+  <meta name="description" content="Professional landing page design for small businesses. Turn visitors into paying customers with data-driven, high-converting landing pages.">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 
   <style>
+    /* ===== CSS RESET & VARIABLES ===== */
+    :root {
+      --primary: #10B981;
+      --primary-dark: #059669;
+      --secondary: #3B82F6;
+      --dark: #111827;
+      --light: #F9FAFB;
+      --gray: #6B7280;
+      --light-gray: #E5E7EB;
+      --shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+      --shadow-hover: 0 15px 35px rgba(0, 0, 0, 0.12);
+      --transition: all 0.3s ease;
+      --border-radius: 12px;
+    }
+
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+    }
+
+    html {
+      scroll-behavior: smooth;
     }
 
     body {
-      color: #111;
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+      color: var(--dark);
       background: #ffffff;
       line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    h1, h2, h3, h4 {
+      font-family: 'Poppins', sans-serif;
+      font-weight: 700;
+      line-height: 1.2;
+    }
+
+    h1 {
+      font-size: 3.5rem;
+      margin-bottom: 1.5rem;
+    }
+
+    h2 {
+      font-size: 2.5rem;
+      margin-bottom: 1.5rem;
+    }
+
+    h3 {
+      font-size: 1.5rem;
+      margin-bottom: 0.8rem;
+    }
+
+    p {
+      font-size: 1.125rem;
+      color: var(--gray);
+      margin-bottom: 1.5rem;
     }
 
     a {
       text-decoration: none;
       color: inherit;
+    }
+
+    ul {
+      list-style: none;
     }
 
     img {
@@ -32,371 +91,1102 @@
     }
 
     .container {
-      max-width: 1100px;
-      margin: auto;
-      padding: 60px 20px;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
     }
 
-    /* HEADER */
+    section {
+      padding: 80px 0;
+    }
+
+    .section-title {
+      text-align: center;
+      margin-bottom: 3rem;
+    }
+
+    .section-title h2 {
+      position: relative;
+      display: inline-block;
+      padding-bottom: 15px;
+    }
+
+    .section-title h2:after {
+      content: '';
+      position: absolute;
+      width: 70px;
+      height: 4px;
+      background: var(--primary);
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      border-radius: 2px;
+    }
+
+    .section-title p {
+      max-width: 700px;
+      margin: 0 auto 2rem;
+    }
+
+    /* ===== BUTTONS ===== */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: var(--primary);
+      color: white;
+      padding: 14px 28px;
+      border-radius: 50px;
+      font-weight: 600;
+      font-size: 1rem;
+      transition: var(--transition);
+      border: none;
+      cursor: pointer;
+      box-shadow: var(--shadow);
+    }
+
+    .btn:hover {
+      background: var(--primary-dark);
+      transform: translateY(-3px);
+      box-shadow: var(--shadow-hover);
+    }
+
+    .btn-secondary {
+      background: var(--secondary);
+    }
+
+    .btn-secondary:hover {
+      background: #2563EB;
+    }
+
+    .btn-outline {
+      background: transparent;
+      border: 2px solid var(--primary);
+      color: var(--primary);
+    }
+
+    .btn-outline:hover {
+      background: var(--primary);
+      color: white;
+    }
+
+    /* ===== HEADER ===== */
     header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 1000;
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(10px);
+      padding: 18px 0;
+      box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+    }
+
+    .navbar {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 20px 40px;
     }
 
     .logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 1.5rem;
       font-weight: 700;
-      font-size: 20px;
+      color: var(--dark);
     }
 
-    .cta-btn {
-      background: #4CAF50;
-      color: #fff;
-      padding: 12px 22px;
-      border-radius: 30px;
-      font-weight: 600;
-      display: inline-block;
+    .logo i {
+      color: var(--primary);
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+      align-items: center;
+    }
+
+    .nav-links a {
+      font-weight: 500;
+      position: relative;
+      padding: 5px 0;
+    }
+
+    .nav-links a:after {
+      content: '';
+      position: absolute;
+      width: 0;
+      height: 2px;
+      background: var(--primary);
+      bottom: 0;
+      left: 0;
+      transition: var(--transition);
+    }
+
+    .nav-links a:hover:after {
+      width: 100%;
+    }
+
+    .mobile-menu-btn {
+      display: none;
+      background: none;
+      border: none;
+      font-size: 1.5rem;
+      color: var(--dark);
       cursor: pointer;
     }
 
-    /* HERO */
+    /* ===== HERO SECTION ===== */
     .hero {
-      display: grid;
-      grid-template-columns: 1.1fr 0.9fr;
-      gap: 50px;
-      align-items: center;
-      padding: 80px 40px;
-      background: linear-gradient(to right, #f7fff9, #ffffff);
+      padding: 150px 0 80px;
+      background: linear-gradient(135deg, #F0FFF4 0%, #F0F9FF 100%);
+      position: relative;
+      overflow: hidden;
     }
 
-    .hero h1 {
-      font-size: 44px;
-      line-height: 1.2;
-      margin-bottom: 20px;
-    }
-
-    .hero p {
-      font-size: 18px;
-      color: #444;
-      margin-bottom: 30px;
-    }
-
-    .hero-mockup {
-      background: #f2f2f2;
-      border-radius: 14px;
-      padding: 20px;
-    }
-
-    /* SECTIONS */
-    .section-title {
-      font-size: 32px;
-      margin-bottom: 20px;
-    }
-
-    .section-desc {
-      max-width: 700px;
-      color: #555;
-      margin-bottom: 40px;
-    }
-
-    .two-col {
+    .hero .container {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 40px;
+      gap: 60px;
+      align-items: center;
     }
 
-    ul {
-      list-style: none;
+    .hero-content h1 {
+      font-size: 3.2rem;
+      line-height: 1.1;
     }
 
-    ul li {
-      margin-bottom: 14px;
-      padding-left: 24px;
+    .hero-content h1 span {
+      color: var(--primary);
       position: relative;
     }
 
-    ul li::before {
-      content: "✓";
+    .hero-content h1 span:after {
+      content: '';
       position: absolute;
+      width: 100%;
+      height: 8px;
+      background: rgba(16, 185, 129, 0.2);
+      bottom: 5px;
       left: 0;
-      color: #4CAF50;
-      font-weight: bold;
+      z-index: -1;
     }
 
-    /* PROCESS */
-    .steps {
+    .hero-buttons {
+      display: flex;
+      gap: 15px;
+      margin-top: 2rem;
+    }
+
+    .hero-image {
+      position: relative;
+    }
+
+    .hero-mockup {
+      background: white;
+      border-radius: var(--border-radius);
+      padding: 20px;
+      box-shadow: var(--shadow);
+      transform: perspective(1000px) rotateY(-10deg);
+      transition: var(--transition);
+    }
+
+    .hero-mockup:hover {
+      transform: perspective(1000px) rotateY(0deg);
+    }
+
+    .hero-mockup img {
+      border-radius: 8px;
+    }
+
+    .hero-badge {
+      position: absolute;
+      top: -15px;
+      right: -15px;
+      background: var(--primary);
+      color: white;
+      padding: 10px 20px;
+      border-radius: 50px;
+      font-weight: 600;
+      box-shadow: var(--shadow);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    /* ===== STATS SECTION ===== */
+    .stats {
+      background: var(--light);
+    }
+
+    .stats-container {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 25px;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 30px;
+      text-align: center;
+    }
+
+    .stat-item {
+      padding: 30px;
+    }
+
+    .stat-number {
+      font-size: 3rem;
+      font-weight: 700;
+      color: var(--primary);
+      margin-bottom: 10px;
+    }
+
+    /* ===== FEATURES SECTION ===== */
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 30px;
+    }
+
+    .feature-card {
+      background: white;
+      padding: 30px;
+      border-radius: var(--border-radius);
+      box-shadow: var(--shadow);
+      transition: var(--transition);
+      border: 1px solid var(--light-gray);
+    }
+
+    .feature-card:hover {
+      transform: translateY(-10px);
+      box-shadow: var(--shadow-hover);
+    }
+
+    .feature-icon {
+      width: 60px;
+      height: 60px;
+      background: rgba(16, 185, 129, 0.1);
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 20px;
+      font-size: 1.5rem;
+      color: var(--primary);
+    }
+
+    /* ===== PROCESS SECTION ===== */
+    .process-steps {
+      display: flex;
+      flex-direction: column;
+      gap: 40px;
+      position: relative;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .process-steps:before {
+      content: '';
+      position: absolute;
+      width: 3px;
+      height: 100%;
+      background: var(--light-gray);
+      left: 30px;
+      top: 0;
     }
 
     .step {
-      background: #f8f8f8;
+      display: flex;
+      gap: 30px;
+      align-items: flex-start;
+      position: relative;
+    }
+
+    .step-number {
+      width: 60px;
+      height: 60px;
+      background: var(--primary);
+      color: white;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.5rem;
+      font-weight: 700;
+      flex-shrink: 0;
+      z-index: 1;
+    }
+
+    .step-content {
+      flex: 1;
+      background: white;
       padding: 25px;
-      border-radius: 12px;
+      border-radius: var(--border-radius);
+      box-shadow: var(--shadow);
     }
 
-    .step h3 {
-      margin-bottom: 10px;
-      font-size: 18px;
+    /* ===== TESTIMONIALS ===== */
+    .testimonials {
+      background: var(--light);
     }
 
-    /* PRICING */
-    .pricing-box {
-      max-width: 420px;
-      background: #f7fff9;
-      border: 2px solid #4CAF50;
+    .testimonials-slider {
+      max-width: 800px;
+      margin: 0 auto;
+      position: relative;
+    }
+
+    .testimonial-card {
+      background: white;
       padding: 40px;
-      border-radius: 16px;
+      border-radius: var(--border-radius);
+      box-shadow: var(--shadow);
       text-align: center;
+    }
+
+    .testimonial-text {
+      font-size: 1.25rem;
+      font-style: italic;
+      margin-bottom: 2rem;
+      position: relative;
+    }
+
+    .testimonial-text:before, .testimonial-text:after {
+      content: '"';
+      font-size: 3rem;
+      color: var(--primary);
+      opacity: 0.3;
+    }
+
+    .client-info {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 15px;
+    }
+
+    .client-avatar {
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      overflow: hidden;
+      border: 3px solid var(--primary);
+    }
+
+    /* ===== PRICING ===== */
+    .pricing-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 30px;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+
+    .pricing-card {
+      background: white;
+      padding: 40px 30px;
+      border-radius: var(--border-radius);
+      box-shadow: var(--shadow);
+      text-align: center;
+      transition: var(--transition);
+      border: 2px solid var(--light-gray);
+      position: relative;
+    }
+
+    .pricing-card.featured {
+      border-color: var(--primary);
+      transform: scale(1.05);
+    }
+
+    .pricing-badge {
+      position: absolute;
+      top: -15px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: var(--primary);
+      color: white;
+      padding: 5px 20px;
+      border-radius: 50px;
+      font-size: 0.9rem;
+      font-weight: 600;
     }
 
     .price {
-      font-size: 36px;
+      font-size: 3rem;
       font-weight: 700;
+      color: var(--dark);
       margin: 20px 0;
     }
 
-    /* FINAL CTA */
-    .final-cta {
-      background: #111;
-      color: #fff;
-      text-align: center;
-      padding: 80px 20px;
+    .price span {
+      font-size: 1rem;
+      color: var(--gray);
     }
 
-    .final-cta h2 {
-      font-size: 34px;
+    .pricing-features {
+      margin: 30px 0;
+    }
+
+    .pricing-features li {
+      padding: 10px 0;
+      border-bottom: 1px solid var(--light-gray);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+    }
+
+    .pricing-features li i {
+      color: var(--primary);
+    }
+
+    /* ===== CTA SECTION ===== */
+    .cta-section {
+      background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+      color: white;
+      text-align: center;
+    }
+
+    .cta-section h2 {
+      color: white;
+    }
+
+    .cta-section p {
+      color: rgba(255, 255, 255, 0.9);
+      max-width: 700px;
+      margin: 0 auto 2rem;
+    }
+
+    .cta-section .btn {
+      background: white;
+      color: var(--primary);
+    }
+
+    .cta-section .btn:hover {
+      background: var(--light);
+    }
+
+    /* ===== CONTACT FORM ===== */
+    .contact-form {
+      max-width: 600px;
+      margin: 0 auto;
+      background: white;
+      padding: 40px;
+      border-radius: var(--border-radius);
+      box-shadow: var(--shadow);
+    }
+
+    .form-group {
       margin-bottom: 20px;
     }
 
-    .final-cta p {
-      color: #ccc;
-      margin-bottom: 30px;
+    .form-group label {
+      display: block;
+      margin-bottom: 8px;
+      font-weight: 500;
     }
 
-    /* WHATSAPP FLOAT */
+    .form-control {
+      width: 100%;
+      padding: 14px;
+      border: 1px solid var(--light-gray);
+      border-radius: 8px;
+      font-size: 1rem;
+      transition: var(--transition);
+    }
+
+    .form-control:focus {
+      outline: none;
+      border-color: var(--primary);
+      box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.1);
+    }
+
+    /* ===== FOOTER ===== */
+    footer {
+      background: var(--dark);
+      color: white;
+      padding: 60px 0 30px;
+    }
+
+    .footer-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 40px;
+      margin-bottom: 40px;
+    }
+
+    .footer-column h3 {
+      margin-bottom: 1.5rem;
+      font-size: 1.3rem;
+    }
+
+    .footer-links li {
+      margin-bottom: 12px;
+    }
+
+    .footer-links a {
+      color: #9CA3AF;
+      transition: var(--transition);
+    }
+
+    .footer-links a:hover {
+      color: white;
+      padding-left: 5px;
+    }
+
+    .social-links {
+      display: flex;
+      gap: 15px;
+      margin-top: 20px;
+    }
+
+    .social-links a {
+      width: 40px;
+      height: 40px;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: var(--transition);
+    }
+
+    .social-links a:hover {
+      background: var(--primary);
+      transform: translateY(-3px);
+    }
+
+    .copyright {
+      text-align: center;
+      padding-top: 30px;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      color: #9CA3AF;
+      font-size: 0.9rem;
+    }
+
+    /* ===== WHATSAPP FLOAT ===== */
     .whatsapp-float {
       position: fixed;
-      bottom: 20px;
-      right: 20px;
+      bottom: 30px;
+      right: 30px;
       background: #25D366;
-      color: #fff;
-      padding: 14px 20px;
-      border-radius: 30px;
-      font-weight: 600;
-      box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+      color: white;
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.8rem;
+      box-shadow: var(--shadow-hover);
       z-index: 999;
-      display: none;
+      transition: var(--transition);
+      animation: float 3s ease-in-out infinite;
     }
 
-    footer {
-      text-align: center;
-      padding: 30px;
-      font-size: 14px;
-      color: #777;
+    .whatsapp-float:hover {
+      transform: scale(1.1);
     }
 
-    /* RESPONSIVE */
-    @media (max-width: 900px) {
-      .hero {
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+    }
+
+    /* ===== RESPONSIVE DESIGN ===== */
+    @media (max-width: 992px) {
+      h1 { font-size: 2.8rem; }
+      h2 { font-size: 2.2rem; }
+      
+      .hero .container {
         grid-template-columns: 1fr;
         text-align: center;
       }
-
-      header {
-        padding: 20px;
+      
+      .hero-buttons {
+        justify-content: center;
       }
-
-      .two-col {
-        grid-template-columns: 1fr;
+      
+      .hero-mockup {
+        transform: none;
+        max-width: 600px;
+        margin: 0 auto;
       }
     }
 
-    /* ====== ANIMATIONS ====== */
+    @media (max-width: 768px) {
+      h1 { font-size: 2.3rem; }
+      h2 { font-size: 1.8rem; }
+      
+      section {
+        padding: 60px 0;
+      }
+      
+      .nav-links {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background: white;
+        flex-direction: column;
+        padding: 20px;
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+      }
+      
+      .nav-links.active {
+        display: flex;
+      }
+      
+      .mobile-menu-btn {
+        display: block;
+      }
+      
+      .pricing-card.featured {
+        transform: none;
+      }
+    }
 
-.fade-up {
-  opacity: 0;
-  transform: translateY(40px);
-  transition: all 0.8s ease;
-}
+    /* ===== ANIMATIONS ===== */
+    .fade-up {
+      opacity: 0;
+      transform: translateY(40px);
+      transition: all 0.8s ease;
+    }
 
-.fade-up.show {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-/* Button micro interaction */
-.cta-btn {
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
-
-.cta-btn:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
-}
-
-/* Hero image subtle motion */
-.hero-mockup img {
-  animation: floatIn 1.2s ease forwards;
-}
-
-@keyframes floatIn {
-  from {
-    opacity: 0;
-    transform: translateY(30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
+    .fade-up.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
   </style>
 </head>
 
 <body>
-
-<header>
-  <div class="logo">Page2Lead</div>
-  <a href="#contact" class="cta-btn">Free Audit</a>
-</header>
-
-<section class="hero">
-  <div>
-    <h1>Landing Pages for Small Businesses That Want More Leads</h1>
-    <p>
-      I design high-converting landing pages that turn visitors into real enquiries —
-      not just traffic or pretty designs.
-    </p>
-    <a href="#contact" class="cta-btn">Get a Free 10-Minute Audit</a>
-  </div>
-
-  <div class="hero-mockup">
-    <!-- Replace this image with your own landing page screenshot -->
-    <img src="preview.jpg" alt="Landing page preview">
-  </div>
-</section>
-
-<section class="container fade-up">
-  <h2 class="section-title">Who This Is For</h2>
-  <div class="two-col">
-    <ul>
-      <li>Small businesses running ads but getting no enquiries</li>
-      <li>Freelancers & coaches who need one focused page</li>
-      <li>Anyone tired of websites that don’t convert</li>
-    </ul>
-    <ul>
-      <li>You want leads, not “just a website”</li>
-      <li>You care about ROI, not fancy animations</li>
-      <li>You want fast, clean, SEO-ready pages</li>
-    </ul>
-  </div>
-</section>
-
-<section class="container fade-up">
-  <h2 class="section-title">Why Most Websites Fail</h2>
-  <p class="section-desc">
-    Most websites confuse visitors, load slowly, and never clearly ask for action.
-    Good design without conversion is useless.
-  </p>
-  <ul>
-    <li>No clear headline or offer</li>
-    <li>Too many pages, no focus</li>
-    <li>Looks good but doesn’t sell</li>
-  </ul>
-</section>
-
-<section class="container fade-up">
-  <h2 class="section-title">How Page2Lead Works</h2>
-  <div class="steps">
-    <div class="step">
-      <h3>1. Intent Research</h3>
-      <p>I understand your audience and what makes them click.</p>
+  <!-- Header -->
+  <header>
+    <div class="container navbar">
+      <a href="#" class="logo">
+        <i class="fas fa-rocket"></i>
+        <span>Page2Lead</span>
+      </a>
+      
+      <button class="mobile-menu-btn" id="mobileMenuBtn">
+        <i class="fas fa-bars"></i>
+      </button>
+      
+      <nav class="nav-links" id="navLinks">
+        <a href="#home">Home</a>
+        <a href="#features">Features</a>
+        <a href="#process">Process</a>
+        <a href="#pricing">Pricing</a>
+        <a href="#contact">Contact</a>
+        <a href="#contact" class="btn">Get Free Audit</a>
+      </nav>
     </div>
-    <div class="step">
-      <h3>2. Conversion Copy</h3>
-      <p>Clear message, clear offer, clear action.</p>
+  </header>
+
+  <!-- Hero Section -->
+  <section id="home" class="hero">
+    <div class="container">
+      <div class="hero-content">
+        <h1>Turn Visitors Into <span>Paying Customers</span> With High-Converting Landing Pages</h1>
+        <p>I design data-driven landing pages specifically for small businesses that want real enquiries, not just website traffic. Stop wasting ad spend on pages that don't convert.</p>
+        <div class="hero-buttons">
+          <a href="#contact" class="btn">
+            <i class="fas fa-chart-line"></i>
+            Get Free Audit
+          </a>
+          <a href="#pricing" class="btn btn-outline">
+            <i class="fas fa-eye"></i>
+            See Pricing
+          </a>
+        </div>
+      </div>
+      
+      <div class="hero-image">
+        <div class="hero-mockup">
+          <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Landing Page Design">
+        </div>
+        <div class="hero-badge">
+          <i class="fas fa-bolt"></i>
+          <span>+47% Conversion Rate</span>
+        </div>
+      </div>
     </div>
-    <div class="step">
-      <h3>3. Fast HTML Design</h3>
-      <p>No WordPress bloat. Clean, lightweight code.</p>
+  </section>
+
+  <!-- Stats Section -->
+  <section class="stats">
+    <div class="container">
+      <div class="stats-container">
+        <div class="stat-item">
+          <div class="stat-number">+147%</div>
+          <h3>Avg. Lead Increase</h3>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number">24-48h</div>
+          <h3>Delivery Time</h3>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number">100+</div>
+          <h3>Pages Delivered</h3>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number">4.9/5</div>
+          <h3>Client Satisfaction</h3>
+        </div>
+      </div>
     </div>
-    <div class="step">
-      <h3>4. SEO-Ready Structure</h3>
-      <p>Built so Google understands it and users trust it.</p>
+  </section>
+
+  <!-- Features Section -->
+  <section id="features" class="container fade-up">
+    <div class="section-title">
+      <h2>Why Page2Lead Works</h2>
+      <p>Traditional websites focus on aesthetics. We focus on psychology and data to create pages that actually convert.</p>
     </div>
-  </div>
-</section>
+    
+    <div class="features-grid">
+      <div class="feature-card">
+        <div class="feature-icon">
+          <i class="fas fa-bullseye"></i>
+        </div>
+        <h3>Targeted Message</h3>
+        <p>Copy that speaks directly to your ideal customer's pain points and desires.</p>
+      </div>
+      
+      <div class="feature-card">
+        <div class="feature-icon">
+          <i class="fas fa-mobile-alt"></i>
+        </div>
+        <h3>Mobile-First Design</h3>
+        <p>70% of traffic comes from mobile. We design for thumbs, not just desktops.</p>
+      </div>
+      
+      <div class="feature-card">
+        <div class="feature-icon">
+          <i class="fas fa-bolt"></i>
+        </div>
+        <h3>Lightning Fast</h3>
+        <p>Clean HTML/CSS code that loads in under 2 seconds. No bloated WordPress themes.</p>
+      </div>
+      
+      <div class="feature-card">
+        <div class="feature-icon">
+          <i class="fas fa-chart-pie"></i>
+        </div>
+        <h3>Built for Analytics</h3>
+        <p>Every element is trackable. Know exactly what's working and what's not.</p>
+      </div>
+    </div>
+  </section>
 
-<section class="container fade-up">
-  <h2 class="section-title">Pricing</h2>
-  <div class="pricing-box">
-    <h3>Landing Page Design</h3>
-    <div class="price">$39+</div>
-    <p>One focused landing page built to convert visitors into leads.</p>
-    <a href="#contact" class="cta-btn">Get Started</a>
-  </div>
-</section>
+  <!-- Process Section -->
+  <section id="process" class="container fade-up">
+    <div class="section-title">
+      <h2>Our 4-Step Process</h2>
+      <p>Simple, transparent, and focused on your business goals.</p>
+    </div>
+    
+    <div class="process-steps">
+      <div class="step">
+        <div class="step-number">1</div>
+        <div class="step-content">
+          <h3>Discovery Call</h3>
+          <p>We'll discuss your business, target audience, and goals to understand what makes your customers tick.</p>
+        </div>
+      </div>
+      
+      <div class="step">
+        <div class="step-number">2</div>
+        <div class="step-content">
+          <h3>Copy & Strategy</h3>
+          <p>I'll craft compelling headlines and copy that addresses objections and builds trust.</p>
+        </div>
+      </div>
+      
+      <div class="step">
+        <div class="step-number">3</div>
+        <div class="step-content">
+          <h3>Design & Build</h3>
+          <p>Clean, conversion-focused design that guides visitors toward your call-to-action.</p>
+        </div>
+      </div>
+      
+      <div class="step">
+        <div class="step-number">4</div>
+        <div class="step-content">
+          <h3>Launch & Optimize</h3>
+          <p>We'll launch your page and provide recommendations for ongoing optimization.</p>
+        </div>
+      </div>
+    </div>
+  </section>
 
-<section id="contact" class="final-cta">
-  <h2>Get a Free Landing Page Audit</h2>
-  <p>
-    Send your website or idea and I’ll tell you exactly what’s stopping it from converting.
-    No sales pitch. Just honest feedback.
-  </p>
-  <a href="https://wa.me/918290948499" class="cta-btn">WhatsApp Me</a>
-</section>
+  <!-- Testimonials -->
+  <section class="testimonials fade-up">
+    <div class="container">
+      <div class="section-title">
+        <h2>What Clients Say</h2>
+        <p>Don't just take our word for it. Here's what our clients have to say.</p>
+      </div>
+      
+      <div class="testimonials-slider">
+        <div class="testimonial-card">
+          <div class="testimonial-text">
+            "Our landing page converted at 12% compared to our old website's 3%. Best investment we made this quarter."
+          </div>
+          <div class="client-info">
+            <div class="client-avatar">
+              <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Client">
+            </div>
+            <div>
+              <h4>Raj Sharma</h4>
+              <p>Founder, Digital Marketing Agency</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-<a href="https://wa.me/918290948499" class="whatsapp-float">WhatsApp</a>
+  <!-- Pricing Section -->
+  <section id="pricing" class="container fade-up">
+    <div class="section-title">
+      <h2>Simple, Transparent Pricing</h2>
+      <p>One-time fee. No hidden charges. No monthly subscriptions.</p>
+    </div>
+    
+    <div class="pricing-container">
+      <div class="pricing-card">
+        <h3>Basic Landing Page</h3>
+        <div class="price">₹4,999 <span>/ one-time</span></div>
+        <ul class="pricing-features">
+          <li><i class="fas fa-check"></i> 1 High-Converting Landing Page</li>
+          <li><i class="fas fa-check"></i> Mobile-Optimized Design</li>
+          <li><i class="fas fa-check"></i> Basic SEO Setup</li>
+          <li><i class="fas fa-check"></i> Contact Form Integration</li>
+          <li><i class="fas fa-check"></i> 7-Day Support</li>
+        </ul>
+        <a href="#contact" class="btn btn-outline">Get Started</a>
+      </div>
+      
+      <div class="pricing-card featured">
+        <div class="pricing-badge">Most Popular</div>
+        <h3>Pro Landing Page</h3>
+        <div class="price">₹9,999 <span>/ one-time</span></div>
+        <ul class="pricing-features">
+          <li><i class="fas fa-check"></i> Everything in Basic +</li>
+          <li><i class="fas fa-check"></i> Advanced Copywriting</li>
+          <li><i class="fas fa-check"></i> A/B Testing Setup</li>
+          <li><i class="fas fa-check"></i> Analytics Integration</li>
+          <li><i class="fas fa-check"></i> 30-Day Optimization Support</li>
+          <li><i class="fas fa-check"></i> Priority Delivery (48h)</li>
+        </ul>
+        <a href="#contact" class="btn">Get Started</a>
+      </div>
+      
+      <div class="pricing-card">
+        <h3>Custom Package</h3>
+        <div class="price">Custom</div>
+        <ul class="pricing-features">
+          <li><i class="fas fa-check"></i> Multiple Landing Pages</li>
+          <li><i class="fas fa-check"></i> Funnel Design</li>
+          <li><i class="fas fa-check"></i> Email Integration</li>
+          <li><i class="fas fa-check"></i> Ongoing Management</li>
+          <li><i class="fas fa-check"></i> Monthly Reporting</li>
+        </ul>
+        <a href="#contact" class="btn btn-outline">Contact Us</a>
+      </div>
+    </div>
+  </section>
 
-<footer>
-  © Page2Lead — High-Converting Landing Pages
-</footer>
+  <!-- CTA Section -->
+  <section class="cta-section fade-up">
+    <div class="container">
+      <h2>Get Your Free Landing Page Audit</h2>
+      <p>Send me your current website or landing page. I'll analyze it and give you 3 actionable tips to improve conversions - absolutely free, no strings attached.</p>
+      <a href="#contact" class="btn">
+        <i class="fas fa-award"></i>
+        Claim Free Audit
+      </a>
+    </div>
+  </section>
 
-<!-- ================= JS ================= -->
-<script>
-  const animatedSections = document.querySelectorAll('.fade-up');
+  <!-- Contact Section -->
+  <section id="contact" class="container fade-up">
+    <div class="section-title">
+      <h2>Let's Talk About Your Project</h2>
+      <p>Fill out the form below and I'll get back to you within 24 hours.</p>
+    </div>
+    
+    <div class="contact-form">
+      <form id="contactForm">
+        <div class="form-group">
+          <label for="name">Your Name</label>
+          <input type="text" id="name" class="form-control" placeholder="John Doe" required>
+        </div>
+        
+        <div class="form-group">
+          <label for="email">Email Address</label>
+          <input type="email" id="email" class="form-control" placeholder="john@example.com" required>
+        </div>
+        
+        <div class="form-group">
+          <label for="website">Website (if any)</label>
+          <input type="url" id="website" class="form-control" placeholder="https://yourwebsite.com">
+        </div>
+        
+        <div class="form-group">
+          <label for="message">Tell me about your project</label>
+          <textarea id="message" class="form-control" rows="5" placeholder="I need a landing page for my coaching business..."></textarea>
+        </div>
+        
+        <button type="submit" class="btn" style="width: 100%;">
+          <i class="fas fa-paper-plane"></i>
+          Send Message
+        </button>
+      </form>
+    </div>
+  </section>
 
-  const observer = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('show');
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="footer-container">
+        <div class="footer-column">
+          <h3>Page2Lead</h3>
+          <p>High-converting landing pages for small businesses that want real results, not just a pretty website.</p>
+          <div class="social-links">
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-dribbble"></i></a>
+          </div>
+        </div>
+        
+        <div class="footer-column">
+          <h3>Quick Links</h3>
+          <ul class="footer-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#features">Features</a></li>
+            <li><a href="#process">Process</a></li>
+            <li><a href="#pricing">Pricing</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </div>
+        
+        <div class="footer-column">
+          <h3>Services</h3>
+          <ul class="footer-links">
+            <li><a href="#pricing">Landing Page Design</a></li>
+            <li><a href="#pricing">Conversion Optimization</a></li>
+            <li><a href="#pricing">Copywriting</a></li>
+            <li><a href="#pricing">Website Audit</a></li>
+          </ul>
+        </div>
+        
+        <div class="footer-column">
+          <h3>Contact Info</h3>
+          <ul class="footer-links">
+            <li><i class="fas fa-envelope"></i> hello@page2lead.com</li>
+            <li><i class="fas fa-phone"></i> +91 82909 48499</li>
+            <li><i class="fas fa-map-marker-alt"></i> Based in India</li>
+            <li><i class="fas fa-clock"></i> Mon-Fri: 10AM-7PM</li>
+          </ul>
+        </div>
+      </div>
+      
+      <div class="copyright">
+        <p>&copy; 2026 Page2Lead. All rights reserved. | Designed with <i class="fas fa-heart" style="color: #EF4444;"></i></p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- WhatsApp Float -->
+  <a href="https://wa.me/918290948499" class="whatsapp-float" target="_blank">
+    <i class="fab fa-whatsapp"></i>
+  </a>
+
+  <!-- JavaScript -->
+  <script>
+    // Mobile Menu Toggle
+    const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+    const navLinks = document.getElementById('navLinks');
+    
+    mobileMenuBtn.addEventListener('click', () => {
+      navLinks.classList.toggle('active');
+      const icon = mobileMenuBtn.querySelector('i');
+      icon.classList.toggle('fa-bars');
+      icon.classList.toggle('fa-times');
+    });
+    
+    // Close mobile menu when clicking a link
+    document.querySelectorAll('.nav-links a').forEach(link => {
+      link.addEventListener('click', () => {
+        navLinks.classList.remove('active');
+        mobileMenuBtn.querySelector('i').classList.remove('fa-times');
+        mobileMenuBtn.querySelector('i').classList.add('fa-bars');
+      });
+    });
+    
+    // Scroll Animations
+    const animatedElements = document.querySelectorAll('.fade-up');
+    
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('show');
+        }
+      });
+    }, { threshold: 0.1 });
+    
+    animatedElements.forEach(element => {
+      observer.observe(element);
+    });
+    
+    // Form Submission
+    const contactForm = document.getElementById('contactForm');
+    
+    contactForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      
+      // Get form values
+      const name = document.getElementById('name').value;
+      const email = document.getElementById('email').value;
+      
+      // Show success message
+      const submitBtn = contactForm.querySelector('button');
+      const originalText = submitBtn.innerHTML;
+      
+      submitBtn.innerHTML = '<i class="fas fa-check"></i> Message Sent!';
+      submitBtn.style.background = '#10B981';
+      
+      // Reset form
+      contactForm.reset();
+      
+      // Reset button after 3 seconds
+      setTimeout(() => {
+        submitBtn.innerHTML = originalText;
+        submitBtn.style.background = '';
+      }, 3000);
+      
+      // In a real application, you would send this data to a server
+      console.log('Form submitted:', { name, email });
+    });
+    
+    // Sticky Header
+    window.addEventListener('scroll', () => {
+      const header = document.querySelector('header');
+      if (window.scrollY > 100) {
+        header.style.boxShadow = '0 10px 30px rgba(0, 0, 0, 0.1)';
+      } else {
+        header.style.boxShadow = '0 5px 20px rgba(0, 0, 0, 0.05)';
       }
     });
-  }, { threshold: 0.2 });
-
-  animatedSections.forEach(section => {
-    observer.observe(section);
-  });
-
-  /* Smooth scroll */
-  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
-      e.preventDefault();
-      document.querySelector(this.getAttribute('href'))
-        .scrollIntoView({ behavior: 'smooth' });
+    
+    // WhatsApp button click tracking
+    document.querySelector('.whatsapp-float').addEventListener('click', () => {
+      console.log('WhatsApp button clicked');
     });
-  });
-
-  /* Sticky WhatsApp button */
-  const waBtn = document.querySelector('.whatsapp-float');
-  window.addEventListener('scroll', () => {
-    if (window.scrollY > 400) {
-      waBtn.style.display = 'block';
-    } else {
-      waBtn.style.display = 'none';
-    }
-  });
-
-  /* CTA click tracking (console for now) */
-  document.querySelectorAll('.cta-btn').forEach(btn => {
-    btn.addEventListener('click', () => {
-      console.log('CTA clicked:', btn.innerText);
-    });
-  });
-</script>
-
+  </script>
 </body>
 </html>
