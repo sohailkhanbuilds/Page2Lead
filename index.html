@@ -1,1192 +1,580 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <title>Page2Lead – High-Converting Landing Pages That Get Real Leads</title>
-
-  <meta name="description" content="Professional landing page design for small businesses. Turn visitors into paying customers with data-driven, high-converting landing pages.">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  
-  <!-- Font Awesome Icons -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  
-  <!-- Google Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-
-  <style>
-    /* ===== CSS RESET & VARIABLES ===== */
-    :root {
-      --primary: #10B981;
-      --primary-dark: #059669;
-      --secondary: #3B82F6;
-      --dark: #111827;
-      --light: #F9FAFB;
-      --gray: #6B7280;
-      --light-gray: #E5E7EB;
-      --shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
-      --shadow-hover: 0 15px 35px rgba(0, 0, 0, 0.12);
-      --transition: all 0.3s ease;
-      --border-radius: 12px;
-    }
-
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    html {
-      scroll-behavior: smooth;
-    }
-
-    body {
-      font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
-      color: var(--dark);
-      background: #ffffff;
-      line-height: 1.6;
-      overflow-x: hidden;
-    }
-
-    h1, h2, h3, h4 {
-      font-family: 'Poppins', sans-serif;
-      font-weight: 700;
-      line-height: 1.2;
-    }
-
-    h1 {
-      font-size: 3.5rem;
-      margin-bottom: 1.5rem;
-    }
-
-    h2 {
-      font-size: 2.5rem;
-      margin-bottom: 1.5rem;
-    }
-
-    h3 {
-      font-size: 1.5rem;
-      margin-bottom: 0.8rem;
-    }
-
-    p {
-      font-size: 1.125rem;
-      color: var(--gray);
-      margin-bottom: 1.5rem;
-    }
-
-    a {
-      text-decoration: none;
-      color: inherit;
-    }
-
-    ul {
-      list-style: none;
-    }
-
-    img {
-      max-width: 100%;
-      display: block;
-    }
-
-    .container {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 0 20px;
-    }
-
-    section {
-      padding: 80px 0;
-    }
-
-    .section-title {
-      text-align: center;
-      margin-bottom: 3rem;
-    }
-
-    .section-title h2 {
-      position: relative;
-      display: inline-block;
-      padding-bottom: 15px;
-    }
-
-    .section-title h2:after {
-      content: '';
-      position: absolute;
-      width: 70px;
-      height: 4px;
-      background: var(--primary);
-      bottom: 0;
-      left: 50%;
-      transform: translateX(-50%);
-      border-radius: 2px;
-    }
-
-    .section-title p {
-      max-width: 700px;
-      margin: 0 auto 2rem;
-    }
-
-    /* ===== BUTTONS ===== */
-    .btn {
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      background: var(--primary);
-      color: white;
-      padding: 14px 28px;
-      border-radius: 50px;
-      font-weight: 600;
-      font-size: 1rem;
-      transition: var(--transition);
-      border: none;
-      cursor: pointer;
-      box-shadow: var(--shadow);
-    }
-
-    .btn:hover {
-      background: var(--primary-dark);
-      transform: translateY(-3px);
-      box-shadow: var(--shadow-hover);
-    }
-
-    .btn-secondary {
-      background: var(--secondary);
-    }
-
-    .btn-secondary:hover {
-      background: #2563EB;
-    }
-
-    .btn-outline {
-      background: transparent;
-      border: 2px solid var(--primary);
-      color: var(--primary);
-    }
-
-    .btn-outline:hover {
-      background: var(--primary);
-      color: white;
-    }
-
-    /* ===== HEADER ===== */
-    header {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      z-index: 1000;
-      background: rgba(255, 255, 255, 0.95);
-      backdrop-filter: blur(10px);
-      padding: 18px 0;
-      box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
-    }
-
-    .navbar {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-
-    .logo {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      font-size: 1.5rem;
-      font-weight: 700;
-      color: var(--dark);
-    }
-
-    .logo i {
-      color: var(--primary);
-    }
-
-    .nav-links {
-      display: flex;
-      gap: 2rem;
-      align-items: center;
-    }
-
-    .nav-links a {
-      font-weight: 500;
-      position: relative;
-      padding: 5px 0;
-    }
-
-    .nav-links a:after {
-      content: '';
-      position: absolute;
-      width: 0;
-      height: 2px;
-      background: var(--primary);
-      bottom: 0;
-      left: 0;
-      transition: var(--transition);
-    }
-
-    .nav-links a:hover:after {
-      width: 100%;
-    }
-
-    .mobile-menu-btn {
-      display: none;
-      background: none;
-      border: none;
-      font-size: 1.5rem;
-      color: var(--dark);
-      cursor: pointer;
-    }
-
-    /* ===== HERO SECTION ===== */
-    .hero {
-      padding: 150px 0 80px;
-      background: linear-gradient(135deg, #F0FFF4 0%, #F0F9FF 100%);
-      position: relative;
-      overflow: hidden;
-    }
-
-    .hero .container {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 60px;
-      align-items: center;
-    }
-
-    .hero-content h1 {
-      font-size: 3.2rem;
-      line-height: 1.1;
-    }
-
-    .hero-content h1 span {
-      color: var(--primary);
-      position: relative;
-    }
-
-    .hero-content h1 span:after {
-      content: '';
-      position: absolute;
-      width: 100%;
-      height: 8px;
-      background: rgba(16, 185, 129, 0.2);
-      bottom: 5px;
-      left: 0;
-      z-index: -1;
-    }
-
-    .hero-buttons {
-      display: flex;
-      gap: 15px;
-      margin-top: 2rem;
-    }
-
-    .hero-image {
-      position: relative;
-    }
-
-    .hero-mockup {
-      background: white;
-      border-radius: var(--border-radius);
-      padding: 20px;
-      box-shadow: var(--shadow);
-      transform: perspective(1000px) rotateY(-10deg);
-      transition: var(--transition);
-    }
-
-    .hero-mockup:hover {
-      transform: perspective(1000px) rotateY(0deg);
-    }
-
-    .hero-mockup img {
-      border-radius: 8px;
-    }
-
-    .hero-badge {
-      position: absolute;
-      top: -15px;
-      right: -15px;
-      background: var(--primary);
-      color: white;
-      padding: 10px 20px;
-      border-radius: 50px;
-      font-weight: 600;
-      box-shadow: var(--shadow);
-      display: flex;
-      align-items: center;
-      gap: 8px;
-    }
-
-    /* ===== STATS SECTION ===== */
-    .stats {
-      background: var(--light);
-    }
-
-    .stats-container {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 30px;
-      text-align: center;
-    }
-
-    .stat-item {
-      padding: 30px;
-    }
-
-    .stat-number {
-      font-size: 3rem;
-      font-weight: 700;
-      color: var(--primary);
-      margin-bottom: 10px;
-    }
-
-    /* ===== FEATURES SECTION ===== */
-    .features-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 30px;
-    }
-
-    .feature-card {
-      background: white;
-      padding: 30px;
-      border-radius: var(--border-radius);
-      box-shadow: var(--shadow);
-      transition: var(--transition);
-      border: 1px solid var(--light-gray);
-    }
-
-    .feature-card:hover {
-      transform: translateY(-10px);
-      box-shadow: var(--shadow-hover);
-    }
-
-    .feature-icon {
-      width: 60px;
-      height: 60px;
-      background: rgba(16, 185, 129, 0.1);
-      border-radius: 12px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      margin-bottom: 20px;
-      font-size: 1.5rem;
-      color: var(--primary);
-    }
-
-    /* ===== PROCESS SECTION ===== */
-    .process-steps {
-      display: flex;
-      flex-direction: column;
-      gap: 40px;
-      position: relative;
-      max-width: 800px;
-      margin: 0 auto;
-    }
-
-    .process-steps:before {
-      content: '';
-      position: absolute;
-      width: 3px;
-      height: 100%;
-      background: var(--light-gray);
-      left: 30px;
-      top: 0;
-    }
-
-    .step {
-      display: flex;
-      gap: 30px;
-      align-items: flex-start;
-      position: relative;
-    }
-
-    .step-number {
-      width: 60px;
-      height: 60px;
-      background: var(--primary);
-      color: white;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 1.5rem;
-      font-weight: 700;
-      flex-shrink: 0;
-      z-index: 1;
-    }
-
-    .step-content {
-      flex: 1;
-      background: white;
-      padding: 25px;
-      border-radius: var(--border-radius);
-      box-shadow: var(--shadow);
-    }
-
-    /* ===== TESTIMONIALS ===== */
-    .testimonials {
-      background: var(--light);
-    }
-
-    .testimonials-slider {
-      max-width: 800px;
-      margin: 0 auto;
-      position: relative;
-    }
-
-    .testimonial-card {
-      background: white;
-      padding: 40px;
-      border-radius: var(--border-radius);
-      box-shadow: var(--shadow);
-      text-align: center;
-    }
-
-    .testimonial-text {
-      font-size: 1.25rem;
-      font-style: italic;
-      margin-bottom: 2rem;
-      position: relative;
-    }
-
-    .testimonial-text:before, .testimonial-text:after {
-      content: '"';
-      font-size: 3rem;
-      color: var(--primary);
-      opacity: 0.3;
-    }
-
-    .client-info {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 15px;
-    }
-
-    .client-avatar {
-      width: 60px;
-      height: 60px;
-      border-radius: 50%;
-      overflow: hidden;
-      border: 3px solid var(--primary);
-    }
-
-    /* ===== PRICING ===== */
-    .pricing-container {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 30px;
-      max-width: 1000px;
-      margin: 0 auto;
-    }
-
-    .pricing-card {
-      background: white;
-      padding: 40px 30px;
-      border-radius: var(--border-radius);
-      box-shadow: var(--shadow);
-      text-align: center;
-      transition: var(--transition);
-      border: 2px solid var(--light-gray);
-      position: relative;
-    }
-
-    .pricing-card.featured {
-      border-color: var(--primary);
-      transform: scale(1.05);
-    }
-
-    .pricing-badge {
-      position: absolute;
-      top: -15px;
-      left: 50%;
-      transform: translateX(-50%);
-      background: var(--primary);
-      color: white;
-      padding: 5px 20px;
-      border-radius: 50px;
-      font-size: 0.9rem;
-      font-weight: 600;
-    }
-
-    .price {
-      font-size: 3rem;
-      font-weight: 700;
-      color: var(--dark);
-      margin: 20px 0;
-    }
-
-    .price span {
-      font-size: 1rem;
-      color: var(--gray);
-    }
-
-    .pricing-features {
-      margin: 30px 0;
-    }
-
-    .pricing-features li {
-      padding: 10px 0;
-      border-bottom: 1px solid var(--light-gray);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 10px;
-    }
-
-    .pricing-features li i {
-      color: var(--primary);
-    }
-
-    /* ===== CTA SECTION ===== */
-    .cta-section {
-      background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
-      color: white;
-      text-align: center;
-    }
-
-    .cta-section h2 {
-      color: white;
-    }
-
-    .cta-section p {
-      color: rgba(255, 255, 255, 0.9);
-      max-width: 700px;
-      margin: 0 auto 2rem;
-    }
-
-    .cta-section .btn {
-      background: white;
-      color: var(--primary);
-    }
-
-    .cta-section .btn:hover {
-      background: var(--light);
-    }
-
-    /* ===== CONTACT FORM ===== */
-    .contact-form {
-      max-width: 600px;
-      margin: 0 auto;
-      background: white;
-      padding: 40px;
-      border-radius: var(--border-radius);
-      box-shadow: var(--shadow);
-    }
-
-    .form-group {
-      margin-bottom: 20px;
-    }
-
-    .form-group label {
-      display: block;
-      margin-bottom: 8px;
-      font-weight: 500;
-    }
-
-    .form-control {
-      width: 100%;
-      padding: 14px;
-      border: 1px solid var(--light-gray);
-      border-radius: 8px;
-      font-size: 1rem;
-      transition: var(--transition);
-    }
-
-    .form-control:focus {
-      outline: none;
-      border-color: var(--primary);
-      box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.1);
-    }
-
-    /* ===== FOOTER ===== */
-    footer {
-      background: var(--dark);
-      color: white;
-      padding: 60px 0 30px;
-    }
-
-    .footer-container {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 40px;
-      margin-bottom: 40px;
-    }
-
-    .footer-column h3 {
-      margin-bottom: 1.5rem;
-      font-size: 1.3rem;
-    }
-
-    .footer-links li {
-      margin-bottom: 12px;
-    }
-
-    .footer-links a {
-      color: #9CA3AF;
-      transition: var(--transition);
-    }
-
-    .footer-links a:hover {
-      color: white;
-      padding-left: 5px;
-    }
-
-    .social-links {
-      display: flex;
-      gap: 15px;
-      margin-top: 20px;
-    }
-
-    .social-links a {
-      width: 40px;
-      height: 40px;
-      background: rgba(255, 255, 255, 0.1);
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      transition: var(--transition);
-    }
-
-    .social-links a:hover {
-      background: var(--primary);
-      transform: translateY(-3px);
-    }
-
-    .copyright {
-      text-align: center;
-      padding-top: 30px;
-      border-top: 1px solid rgba(255, 255, 255, 0.1);
-      color: #9CA3AF;
-      font-size: 0.9rem;
-    }
-
-    /* ===== WHATSAPP FLOAT ===== */
-    .whatsapp-float {
-      position: fixed;
-      bottom: 30px;
-      right: 30px;
-      background: #25D366;
-      color: white;
-      width: 60px;
-      height: 60px;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 1.8rem;
-      box-shadow: var(--shadow-hover);
-      z-index: 999;
-      transition: var(--transition);
-      animation: float 3s ease-in-out infinite;
-    }
-
-    .whatsapp-float:hover {
-      transform: scale(1.1);
-    }
-
-    @keyframes float {
-      0%, 100% { transform: translateY(0); }
-      50% { transform: translateY(-10px); }
-    }
-
-    /* ===== RESPONSIVE DESIGN ===== */
-    @media (max-width: 992px) {
-      h1 { font-size: 2.8rem; }
-      h2 { font-size: 2.2rem; }
-      
-      .hero .container {
-        grid-template-columns: 1fr;
-        text-align: center;
-      }
-      
-      .hero-buttons {
-        justify-content: center;
-      }
-      
-      .hero-mockup {
-        transform: none;
-        max-width: 600px;
-        margin: 0 auto;
-      }
-    }
-
-    @media (max-width: 768px) {
-      h1 { font-size: 2.3rem; }
-      h2 { font-size: 1.8rem; }
-      
-      section {
-        padding: 60px 0;
-      }
-      
-      .nav-links {
-        display: none;
-        position: absolute;
-        top: 100%;
-        left: 0;
-        width: 100%;
-        background: white;
-        flex-direction: column;
-        padding: 20px;
-        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-      }
-      
-      .nav-links.active {
-        display: flex;
-      }
-      
-      .mobile-menu-btn {
-        display: block;
-      }
-      
-      .pricing-card.featured {
-        transform: none;
-      }
-    }
-
-    /* ===== ANIMATIONS ===== */
-    .fade-up {
-      opacity: 0;
-      transform: translateY(40px);
-      transition: all 0.8s ease;
-    }
-
-    .fade-up.show {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  </style>
-</head>
-
-<body>
-  <!-- Header -->
-  <header>
-    <div class="container navbar">
-      <a href="#" class="logo">
-        <i class="fas fa-rocket"></i>
-        <span>Page2Lead</span>
-      </a>
-      
-      <button class="mobile-menu-btn" id="mobileMenuBtn">
-        <i class="fas fa-bars"></i>
-      </button>
-      
-      <nav class="nav-links" id="navLinks">
-        <a href="#home">Home</a>
-        <a href="#features">Features</a>
-        <a href="#process">Process</a>
-        <a href="#pricing">Pricing</a>
-        <a href="#contact">Contact</a>
-        <a href="#contact" class="btn">Get Free Audit</a>
-      </nav>
-    </div>
-  </header>
-
-  <!-- Hero Section -->
-  <section id="home" class="hero">
-    <div class="container">
-      <div class="hero-content">
-        <h1>Turn Visitors Into <span>Paying Customers</span> With High-Converting Landing Pages</h1>
-        <p>I design data-driven landing pages specifically for small businesses that want real enquiries, not just website traffic. Stop wasting ad spend on pages that don't convert.</p>
-        <div class="hero-buttons">
-          <a href="#contact" class="btn">
-            <i class="fas fa-chart-line"></i>
-            Get Free Audit
-          </a>
-          <a href="#pricing" class="btn btn-outline">
-            <i class="fas fa-eye"></i>
-            See Pricing
-          </a>
-        </div>
-      </div>
-      
-      <div class="hero-image">
-        <div class="hero-mockup">
-          <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Landing Page Design">
-        </div>
-        <div class="hero-badge">
-          <i class="fas fa-bolt"></i>
-          <span>+47% Conversion Rate</span>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Stats Section -->
-  <section class="stats">
-    <div class="container">
-      <div class="stats-container">
-        <div class="stat-item">
-          <div class="stat-number">+147%</div>
-          <h3>Avg. Lead Increase</h3>
-        </div>
-        <div class="stat-item">
-          <div class="stat-number">24-48h</div>
-          <h3>Delivery Time</h3>
-        </div>
-        <div class="stat-item">
-          <div class="stat-number">100+</div>
-          <h3>Pages Delivered</h3>
-        </div>
-        <div class="stat-item">
-          <div class="stat-number">4.9/5</div>
-          <h3>Client Satisfaction</h3>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Features Section -->
-  <section id="features" class="container fade-up">
-    <div class="section-title">
-      <h2>Why Page2Lead Works</h2>
-      <p>Traditional websites focus on aesthetics. We focus on psychology and data to create pages that actually convert.</p>
-    </div>
-    
-    <div class="features-grid">
-      <div class="feature-card">
-        <div class="feature-icon">
-          <i class="fas fa-bullseye"></i>
-        </div>
-        <h3>Targeted Message</h3>
-        <p>Copy that speaks directly to your ideal customer's pain points and desires.</p>
-      </div>
-      
-      <div class="feature-card">
-        <div class="feature-icon">
-          <i class="fas fa-mobile-alt"></i>
-        </div>
-        <h3>Mobile-First Design</h3>
-        <p>70% of traffic comes from mobile. We design for thumbs, not just desktops.</p>
-      </div>
-      
-      <div class="feature-card">
-        <div class="feature-icon">
-          <i class="fas fa-bolt"></i>
-        </div>
-        <h3>Lightning Fast</h3>
-        <p>Clean HTML/CSS code that loads in under 2 seconds. No bloated WordPress themes.</p>
-      </div>
-      
-      <div class="feature-card">
-        <div class="feature-icon">
-          <i class="fas fa-chart-pie"></i>
-        </div>
-        <h3>Built for Analytics</h3>
-        <p>Every element is trackable. Know exactly what's working and what's not.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- Process Section -->
-  <section id="process" class="container fade-up">
-    <div class="section-title">
-      <h2>Our 4-Step Process</h2>
-      <p>Simple, transparent, and focused on your business goals.</p>
-    </div>
-    
-    <div class="process-steps">
-      <div class="step">
-        <div class="step-number">1</div>
-        <div class="step-content">
-          <h3>Discovery Call</h3>
-          <p>We'll discuss your business, target audience, and goals to understand what makes your customers tick.</p>
-        </div>
-      </div>
-      
-      <div class="step">
-        <div class="step-number">2</div>
-        <div class="step-content">
-          <h3>Copy & Strategy</h3>
-          <p>I'll craft compelling headlines and copy that addresses objections and builds trust.</p>
-        </div>
-      </div>
-      
-      <div class="step">
-        <div class="step-number">3</div>
-        <div class="step-content">
-          <h3>Design & Build</h3>
-          <p>Clean, conversion-focused design that guides visitors toward your call-to-action.</p>
-        </div>
-      </div>
-      
-      <div class="step">
-        <div class="step-number">4</div>
-        <div class="step-content">
-          <h3>Launch & Optimize</h3>
-          <p>We'll launch your page and provide recommendations for ongoing optimization.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Testimonials -->
-  <section class="testimonials fade-up">
-    <div class="container">
-      <div class="section-title">
-        <h2>What Clients Say</h2>
-        <p>Don't just take our word for it. Here's what our clients have to say.</p>
-      </div>
-      
-      <div class="testimonials-slider">
-        <div class="testimonial-card">
-          <div class="testimonial-text">
-            "Our landing page converted at 12% compared to our old website's 3%. Best investment we made this quarter."
-          </div>
-          <div class="client-info">
-            <div class="client-avatar">
-              <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Client">
-            </div>
-            <div>
-              <h4>Raj Sharma</h4>
-              <p>Founder, Digital Marketing Agency</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Pricing Section -->
-  <section id="pricing" class="container fade-up">
-    <div class="section-title">
-      <h2>Simple, Transparent Pricing</h2>
-      <p>One-time fee. No hidden charges. No monthly subscriptions.</p>
-    </div>
-    
-    <div class="pricing-container">
-      <div class="pricing-card">
-        <h3>Basic Landing Page</h3>
-        <div class="price">₹4,999 <span>/ one-time</span></div>
-        <ul class="pricing-features">
-          <li><i class="fas fa-check"></i> 1 High-Converting Landing Page</li>
-          <li><i class="fas fa-check"></i> Mobile-Optimized Design</li>
-          <li><i class="fas fa-check"></i> Basic SEO Setup</li>
-          <li><i class="fas fa-check"></i> Contact Form Integration</li>
-          <li><i class="fas fa-check"></i> 7-Day Support</li>
-        </ul>
-        <a href="#contact" class="btn btn-outline">Get Started</a>
-      </div>
-      
-      <div class="pricing-card featured">
-        <div class="pricing-badge">Most Popular</div>
-        <h3>Pro Landing Page</h3>
-        <div class="price">₹9,999 <span>/ one-time</span></div>
-        <ul class="pricing-features">
-          <li><i class="fas fa-check"></i> Everything in Basic +</li>
-          <li><i class="fas fa-check"></i> Advanced Copywriting</li>
-          <li><i class="fas fa-check"></i> A/B Testing Setup</li>
-          <li><i class="fas fa-check"></i> Analytics Integration</li>
-          <li><i class="fas fa-check"></i> 30-Day Optimization Support</li>
-          <li><i class="fas fa-check"></i> Priority Delivery (48h)</li>
-        </ul>
-        <a href="#contact" class="btn">Get Started</a>
-      </div>
-      
-      <div class="pricing-card">
-        <h3>Custom Package</h3>
-        <div class="price">Custom</div>
-        <ul class="pricing-features">
-          <li><i class="fas fa-check"></i> Multiple Landing Pages</li>
-          <li><i class="fas fa-check"></i> Funnel Design</li>
-          <li><i class="fas fa-check"></i> Email Integration</li>
-          <li><i class="fas fa-check"></i> Ongoing Management</li>
-          <li><i class="fas fa-check"></i> Monthly Reporting</li>
-        </ul>
-        <a href="#contact" class="btn btn-outline">Contact Us</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- CTA Section -->
-  <section class="cta-section fade-up">
-    <div class="container">
-      <h2>Get Your Free Landing Page Audit</h2>
-      <p>Send me your current website or landing page. I'll analyze it and give you 3 actionable tips to improve conversions - absolutely free, no strings attached.</p>
-      <a href="#contact" class="btn">
-        <i class="fas fa-award"></i>
-        Claim Free Audit
-      </a>
-    </div>
-  </section>
-
-  <!-- Contact Section -->
-  <section id="contact" class="container fade-up">
-    <div class="section-title">
-      <h2>Let's Talk About Your Project</h2>
-      <p>Fill out the form below and I'll get back to you within 24 hours.</p>
-    </div>
-    
-    <div class="contact-form">
-      <form id="contactForm">
-        <div class="form-group">
-          <label for="name">Your Name</label>
-          <input type="text" id="name" class="form-control" placeholder="John Doe" required>
-        </div>
-        
-        <div class="form-group">
-          <label for="email">Email Address</label>
-          <input type="email" id="email" class="form-control" placeholder="john@example.com" required>
-        </div>
-        
-        <div class="form-group">
-          <label for="website">Website (if any)</label>
-          <input type="url" id="website" class="form-control" placeholder="https://yourwebsite.com">
-        </div>
-        
-        <div class="form-group">
-          <label for="message">Tell me about your project</label>
-          <textarea id="message" class="form-control" rows="5" placeholder="I need a landing page for my coaching business..."></textarea>
-        </div>
-        
-        <button type="submit" class="btn" style="width: 100%;">
-          <i class="fas fa-paper-plane"></i>
-          Send Message
-        </button>
-      </form>
-    </div>
-  </section>
-
-  <!-- Footer -->
-  <footer>
-    <div class="container">
-      <div class="footer-container">
-        <div class="footer-column">
-          <h3>Page2Lead</h3>
-          <p>High-converting landing pages for small businesses that want real results, not just a pretty website.</p>
-          <div class="social-links">
-            <a href="#"><i class="fab fa-twitter"></i></a>
-            <a href="#"><i class="fab fa-linkedin-in"></i></a>
-            <a href="#"><i class="fab fa-instagram"></i></a>
-            <a href="#"><i class="fab fa-dribbble"></i></a>
-          </div>
-        </div>
-        
-        <div class="footer-column">
-          <h3>Quick Links</h3>
-          <ul class="footer-links">
-            <li><a href="#home">Home</a></li>
-            <li><a href="#features">Features</a></li>
-            <li><a href="#process">Process</a></li>
-            <li><a href="#pricing">Pricing</a></li>
-            <li><a href="#contact">Contact</a></li>
-          </ul>
-        </div>
-        
-        <div class="footer-column">
-          <h3>Services</h3>
-          <ul class="footer-links">
-            <li><a href="#pricing">Landing Page Design</a></li>
-            <li><a href="#pricing">Conversion Optimization</a></li>
-            <li><a href="#pricing">Copywriting</a></li>
-            <li><a href="#pricing">Website Audit</a></li>
-          </ul>
-        </div>
-        
-        <div class="footer-column">
-          <h3>Contact Info</h3>
-          <ul class="footer-links">
-            <li><i class="fas fa-envelope"></i> page2lead.contact@gmail.com</li>
-            <li><i class="fas fa-phone"></i> +91 82909 48499</li>
-            <li><i class="fas fa-map-marker-alt"></i> Based in India</li>
-            <li><i class="fas fa-clock"></i> Mon-Fri: 10AM-7PM</li>
-          </ul>
-        </div>
-      </div>
-      
-      <div class="copyright">
-        <p>&copy; 2026 Page2Lead. All rights reserved. | Designed with <i class="fas fa-heart" style="color: #EF4444;"></i></p>
-      </div>
-    </div>
-  </footer>
-
-  <!-- WhatsApp Float -->
-  <a href="https://wa.me/918290948499" class="whatsapp-float" target="_blank">
-    <i class="fab fa-whatsapp"></i>
-  </a>
-
-  <!-- JavaScript -->
-  <script>
-    // Mobile Menu Toggle
-    const mobileMenuBtn = document.getElementById('mobileMenuBtn');
-    const navLinks = document.getElementById('navLinks');
-    
-    mobileMenuBtn.addEventListener('click', () => {
-      navLinks.classList.toggle('active');
-      const icon = mobileMenuBtn.querySelector('i');
-      icon.classList.toggle('fa-bars');
-      icon.classList.toggle('fa-times');
-    });
-    
-    // Close mobile menu when clicking a link
-    document.querySelectorAll('.nav-links a').forEach(link => {
-      link.addEventListener('click', () => {
-        navLinks.classList.remove('active');
-        mobileMenuBtn.querySelector('i').classList.remove('fa-times');
-        mobileMenuBtn.querySelector('i').classList.add('fa-bars');
-      });
-    });
-    
-    // Scroll Animations
-    const animatedElements = document.querySelectorAll('.fade-up');
-    
-    const observer = new IntersectionObserver(entries => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('show');
+    <!-- ✅ CRITICAL SEO & SETUP TAGS -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page2Lead | High-Converting Landing Pages for Small Businesses</title>
+    <meta name="description" content="Stop wasting ad spend. Get a custom landing page that converts visitors into paying customers in 24-48 hrs. Free audit included. Avg. +147% lead increase.">
+    <meta name="keywords" content="landing page design, small business website, high converting page, lead generation, landing page service">
+    <!-- ✅ OUR CSS STYLING -->
+    <style>
+        /* ====== BASIC RESET & GLOBAL STYLES ====== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
-      });
-    }, { threshold: 0.1 });
-    
-    animatedElements.forEach(element => {
-      observer.observe(element);
-    });
-    
-    // Form Submission
-    const contactForm = document.getElementById('contactForm');
-    
-    contactForm.addEventListener('submit', (e) => {
-      e.preventDefault();
-      
-      // Get form values
-      const name = document.getElementById('name').value;
-      const email = document.getElementById('email').value;
-      
-      // Show success message
-      const submitBtn = contactForm.querySelector('button');
-      const originalText = submitBtn.innerHTML;
-      
-      submitBtn.innerHTML = '<i class="fas fa-check"></i> Message Sent!';
-      submitBtn.style.background = '#10B981';
-      
-      // Reset form
-      contactForm.reset();
-      
-      // Reset button after 3 seconds
-      setTimeout(() => {
-        submitBtn.innerHTML = originalText;
-        submitBtn.style.background = '';
-      }, 3000);
-      
-      // In a real application, you would send this data to a server
-      console.log('Form submitted:', { name, email });
-    });
-    
-    // Sticky Header
-    window.addEventListener('scroll', () => {
-      const header = document.querySelector('header');
-      if (window.scrollY > 100) {
-        header.style.boxShadow = '0 10px 30px rgba(0, 0, 0, 0.1)';
-      } else {
-        header.style.boxShadow = '0 5px 20px rgba(0, 0, 0, 0.05)';
-      }
-    });
-    
-    // WhatsApp button click tracking
-    document.querySelector('.whatsapp-float').addEventListener('click', () => {
-      console.log('WhatsApp button clicked');
-    });
-  </script>
-</body>
-</html>
+        body {
+            line-height: 1.6;
+            color: #333;
+            background-color: #f9f9f9;
+        }
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        section {
+            padding: 60px 20px;
+        }
+
+        /* ====== BUTTON STYLES (Used throughout) ====== */
+        .btn {
+            display: inline-block;
+            padding: 14px 32px;
+            background: linear-gradient(135deg, #4f46e5, #7c3aed);
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 600;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 6px rgba(79, 70, 229, 0.2);
+        }
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 12px rgba(79, 70, 229, 0.3);
+            background: linear-gradient(135deg, #4338ca, #6d28d9);
+        }
+
+        /* ====== HEADER / HERO SECTION ====== */
+        header {
+            background: linear-gradient(135deg, #0f172a, #1e293b);
+            color: white;
+            text-align: center;
+            padding: 100px 20px;
+            border-bottom-left-radius: 40px;
+            border-bottom-right-radius: 40px;
+        }
+        header h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+        header p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto 30px;
+            opacity: 0.9;
+        }
+        @media (max-width: 768px) {
+            header h1 { font-size: 2.2rem; }
+            header p { font-size: 1rem; }
+        }
+
+        /* ====== STATS / SOCIAL PROOF SECTION ====== */
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            text-align: center;
+            margin-top: -50px;
+            position: relative;
+            z-index: 2;
+        }
+        .stat-card {
+            background: white;
+            padding: 30px 20px;
+            border-radius: 16px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease;
+        }
+        .stat-card:hover {
+            transform: translateY(-10px);
+        }
+        .stat-card strong {
+            display: block;
+            font-size: 2.8rem;
+            color: #4f46e5;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+
+        /* ====== "WHY CHOOSE US" / SERVICES SECTION ====== */
+        #services {
+            background-color: white;
+        }
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 50px;
+            color: #1e293b;
+        }
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+        .service-card {
+            padding: 30px;
+            border-radius: 12px;
+            background: #f8fafc;
+            border-left: 5px solid #4f46e5;
+            transition: all 0.3s ease;
+        }
+        .service-card:hover {
+            background: #e0e7ff;
+            transform: translateX(10px);
+        }
+        .service-card h3 {
+            color: #1e293b;
+            margin-bottom: 15px;
+            font-size: 1.5rem;
+        }
+
+        /* ====== PROCESS SECTION ====== */
+        .process-steps {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            counter-reset: step-counter;
+        }
+        .process-card {
+            flex: 1;
+            min-width: 220px;
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            position: relative;
+            padding-top: 50px;
+        }
+        .process-card::before {
+            counter-increment: step-counter;
+            content: "Step " counter(step-counter);
+            position: absolute;
+            top: -15px;
+            left: 20px;
+            background: #4f46e5;
+            color: white;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: bold;
+        }
+
+        /* ====== PORTFOLIO / RECENT WORK SECTION ====== */
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        .portfolio-card {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
+            transition: transform 0.3s ease;
+        }
+        .portfolio-card:hover {
+            transform: translateY(-10px);
+        }
+        .portfolio-content {
+            padding: 25px;
+        }
+        .portfolio-card h3 {
+            color: #1e293b;
+            margin-bottom: 10px;
+        }
+        .portfolio-card p {
+            color: #64748b;
+            margin-bottom: 15px;
+        }
+        .result-badge {
+            display: inline-block;
+            background: #10b981;
+            color: white;
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: bold;
+            margin-top: 10px;
+        }
+
+        /* ====== TESTIMONIALS SECTION ====== */
+        #testimonials {
+            background: linear-gradient(135deg, #e0e7ff, #c7d2fe);
+        }
+        .testimonial {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            padding: 40px;
+            border-radius: 16px;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+            position: relative;
+            font-style: italic;
+        }
+        .testimonial::before {
+            content: '"';
+            font-size: 6rem;
+            color: #c7d2fe;
+            position: absolute;
+            top: -20px;
+            left: 20px;
+            font-family: Georgia, serif;
+        }
+        .client-info {
+            display: flex;
+            align-items: center;
+            margin-top: 20px;
+        }
+        .client-avatar {
+            width: 60px;
+            height: 60px;
+            background: #4f46e5;
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin-right: 15px;
+        }
+
+        /* ====== PRICING SECTION ====== */
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+        .pricing-card {
+            background: white;
+            padding: 40px 30px;
+            border-radius: 16px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+            text-align: center;
+            border: 2px solid #e2e8f0;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+        .pricing-card:hover {
+            border-color: #4f46e5;
+            transform: translateY(-10px);
+        }
+        .pricing-card.popular {
+            border-color: #4f46e5;
+            background: linear-gradient(to bottom, #f8fafc, white);
+        }
+        .popular-tag {
+            position: absolute;
+            top: -12px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: #4f46e5;
+            color: white;
+            padding: 6px 20px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: bold;
+        }
+        .price {
+            font-size: 3rem;
+            color: #1e293b;
+            margin: 20px 0;
+            font-weight: 700;
+        }
+        .price span {
+            font-size: 1rem;
+            color: #64748b;
+        }
+        .features-list {
+            list-style: none;
+            text-align: left;
+            margin: 25px 0;
+        }
+        .features-list li {
+            padding: 8px 0;
+            border-bottom: 1px dashed #e2e8f0;
+        }
+        .features-list li::before {
+            content: "✓ ";
+            color: #10b981;
+            font-weight: bold;
+            margin-right: 10px;
+        }
+
+        /* ====== CTA / CONTACT SECTION ====== */
+        #cta {
+            text-align: center;
+            background: linear-gradient(135deg, #1e293b, #0f172a);
+            color: white;
+            border-radius: 40px;
+        }
+        #cta h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+        .contact-info {
+            margin-top: 30px;
+            font-size: 1.1rem;
+        }
+        .contact-info a {
+            color: #c7d2fe;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        /* ====== FOOTER ====== */
+        footer {
+            background: #0f172a;
+            color: #cbd5e1;
+            text-align: center;
+            padding: 40px 20px;
+            margin-top: 60px;
+        }
+        .footer-links {
+            margin: 20px 0;
+        }
+        .footer-links a {
+            color: #94a3b8;
+            margin: 0 15px;
+            text-decoration: none;
+        }
+        .footer-links a:hover {
+            color: white;
+            text-decoration: underline;
+        }
+
+        /* ====== SIMPLE NAVIGATION ====== */
+        .main-nav {
+            background: rgba(15, 23, 42, 0.95);
+            padding: 20px;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            backdrop-filter: blur(10px);
+        }
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .logo {
+            color: white;
+            font-size: 1.8rem;
+            font-weight: bold;
+            text-decoration: none;
+        }
+        .nav-links a {
+            color: #cbd5e1;
+            margin-left: 25px;
+            text-decoration: none;
+            font-weight: 500;
+        }
+        .nav-links a:hover {
+            color: white;
+        }
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+        @media (max-width: 768px) {
+            .nav-links { display: none; }
+            .mobile-menu-btn { display: block; }
+        }
+    </style>
+</head>
+<body>
+    <!-- ✅ SIMPLE NAVIGATION -->
+    <nav class="main-nav">
+        <div class="nav-container">
+            <a href="index.html" class="logo">Page2Lead</a>
+            <div class="nav-links">
+                <a href="#services">Why Us</a>
+                <a href="#process">Process</a>
+                <a href="#portfolio">Work</a>
+                <a href="#pricing">Pricing</a>
+                <a href="#cta">Free Audit</a>
+                <!-- Will link to other pages later -->
+                <a href="services.html">All Services</a>
+            </div>
+            <button class="mobile-menu-btn">☰</button>
+        </div>
+    </nav>
+
+    <!-- ✅ HERO SECTION -->
+    <header>
+        <div class="container">
+            <h1>Turn Website Visitors Into Paying Customers</h1>
+            <p>I design <strong>high-converting landing pages</strong> that get real enquiries for small businesses. Stop wasting ad spend on pages that don't convert.</p>
+            <a href="#cta" class="btn">Get Your Free Audit →</a>
+        </div>
+    </header>
+
+    <!-- ✅ STATS / SOCIAL PROOF -->
+    <section class="container">
+        <div class="stats">
+            <div class="stat-card">
+                <strong>+147%</strong>
+                Average Lead Increase
+            </div>
+            <div class="stat-card">
+                <strong>24-48h</strong>
+                Delivery Time
+            </div>
+            <div class="stat-card">
+                <strong>100+</strong>
+                Pages Delivered
+            </div>
+            <div class="stat-card">
+                <strong>4.9/5</strong>
+                Client Rating
+            </div>
+        </div>
+    </section>
+
+    <!-- ✅ WHY CHOOSE US / SERVICES -->
+    <section id="services">
+        <div class="container">
+            <h2 class="section-title">Why Our Pages Convert Better</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <h3>🎯 Targeted Copywriting</h3>
+                    <p>Words that speak directly to your customer's pain points and desires, not generic text.</p>
+                </div>
+                <div class="service-card">
+                    <h3>📱 Mobile-First Design</h3>
+                    <p>Over 70% of traffic is mobile. We design for thumbs first, ensuring a perfect experience.</p>
+                </div>
+                <div class="service-card">
+                    <h3>⚡ Lightning Fast Load Times</h3>
+                    <p>Clean, hand-coded HTML/CSS that loads in under 2 seconds. No bloated themes.</p>
+                </div>
+                <div class="service-card">
+                    <h3>📈 Built-In Analytics & Testing</h3>
+                    <p>Every element is trackable. We set up A/B testing so you know exactly what's working.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ✅ OUR 4-STEP PROCESS -->
+    <section id="process">
+        <div class="container">
+            <h2 class="section-title">Simple & Transparent 4-Step Process</h2>
+            <div class="process-steps">
+                <div class="process-card">
+                    <h3>Discovery Call</h3>
+                    <p>We discuss your business, audience, and goals to understand what makes your customers tick.</p>
+                </div>
+                <div class="process-card">
+                    <h3>Copy & Strategy</h3>
+                    <p>I craft compelling headlines and copy that address objections and build trust immediately.</p>
+                </div>
+                <div class="process-card">
+                    <h3>Design & Build</h3>
+                    <p>Clean, conversion-focused design that guides visitors toward your call-to-action seamlessly.</p>
+                </div>
+                <div class="process-card">
+                    <h3>Launch & Optimize</h3>
+                    <p>We launch your page and provide clear recommendations for ongoing optimization and testing.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ✅ PORTFOLIO / RECENT WORK -->
+    <section id="portfolio">
+        <div class="container">
+            <h2 class="section-title">Our Recent Success Stories</h2>
+            <p style="text-align: center; margin-bottom: 40px; color: #64748b;">See how we transformed these businesses with high-converting landing pages</p>
+            <div class="portfolio-grid">
+                <div class="portfolio-card">
+                    <div class="portfolio-content">
+                        <h3>Yoga Studio Landing Page</h3>
+                        <p>Designed to attract local clients and boost class sign-ups with a calming, action-oriented layout.</p>
+                        <div class="result-badge">Result: 320% increase in class bookings</div>
+                        <p><strong>Conversion Rate:</strong> 2% → 8.7%</p>
+                    </div>
+                </div>
+                <div class="portfolio-card">
+                    <div class="portfolio-content">
+                        <h3>Digital Marketing Agency</h3>
+                        <p>A lead-capture powerhouse for a B2B agency, focusing on service clarity and client testimonials.</p>
+                        <div class="result-badge">Result: 47% more leads from ads</div>
+                        <p><strong>Cost per lead</strong> reduced by 68%</p>
+                    </div>
+                </div>
+                <div class="portfolio-card">
+                    <div class="portfolio-content">
+                        <h3>Coaching Business</h3>
+                        <p>A personal brand page that builds authority and converts visitors into consultation bookings.</p>
+                        <div class="result-badge">Result: 12 consultations in 1 week</div>
+                        <p>Email list grew by <strong>300+ subscribers</strong></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ✅ TESTIMONIAL -->
+    <section id="testimonials">
+        <div class="container">
+            <h2 class="section-title">What Our Clients Say</h2>
+            <div class="testimonial">
+                <p>"Page2Lead designed our landing page and we got 3x more leads in the first month itself. The ROI was immediate. Highly recommended for any business serious about growth!"</p>
+                <div class="client-info">
+                    <div class="client-avatar">RS</div>
+                    <div>
+                        <h4>Raj Sharma</h4>
+                        <p>Digital Marketing Agency Owner</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ✅ PRICING SECTION -->
+    <section id="pricing">
+        <div class="container">
+            <h2 class="section-title">Simple, Transparent Pricing</h2>
+            <p style="text-align: center; margin-bottom: 50px; color: #64748b;">One-time fee. No hidden charges. No monthly subscriptions.</p>
+            <div class="pricing-grid">
+                <div class="pricing-card">
+                    <h3>Basic Landing Page</h3>
+                    <div class="price">₹4,999 <span>/ one-time</span></div>
+                    <ul class="features-list">
+                        <li>1 High-Converting Landing Page</li>
+                        <li>Mobile-Optimized Design</li>
+                        <li>Basic SEO Setup</li>
+                        <li>Contact Form Integration</li>
+                        <li>7-Day Support</li>
+                    </ul>
+                    <a href="#cta" class="btn" style="width: 100%; text-align: center;">Choose Basic</a>
+                </div>
+                <div class="pricing-card popular">
+                    <div class="popular-tag">MOST POPULAR</div>
+                    <h3>Pro Landing Page</h3>
+                    <div class="price">₹9,999 <span>/ one-time</span></div>
+                    <ul class="features-list">
+                        <li>Everything in Basic +</li>
+                        <li>Advanced Copywriting</li>
+                        <li>A/B Testing Setup</li>
+                        <li>Analytics Integration</li>
+                        <li>30-Day Optimization Support</li>
+                        <li>Priority Delivery (48h)</li>
+                    </ul>
+                    <a href="#cta" class="btn" style="width: 100%; text-align: 
